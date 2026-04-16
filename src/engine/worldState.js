@@ -1,42 +1,39 @@
-class WorldState {
-  constructor() {
-    this.mood = "calm"
-    this.currentScene = "default"
-    this.teacherMode = false
+// src/engine/worldState.js
 
-    this.user = {
-      level: 1,
-      xp: 0,
-    }
+const worldState = {
+  // session data
+  sessionTimeline: [],
+  sessionSummary: "",
 
-    this.relationship = {
-      dominantEmotion: "neutral",
-    }
+  // add a timeline event
+  addSessionEvent(event) {
+    this.sessionTimeline.push({
+      id: Date.now(),
+      timestamp: new Date().toISOString(),
+      event,
+    });
+  },
 
-    this.engagement = { trend: "stable" }
-    this.trust = { trend: "stable" }
+  // get full timeline (used by UI)
+  getSessionTimeline() {
+    return this.sessionTimeline;
+  },
 
-    this.history = []
-  }
-
-  getHistory() {
-    return this.history || []
-  }
-
-  addToHistory(entry) {
-    this.history.push(entry)
-    if (this.history.length > 200) this.history.shift()
-  }
-
+  // get summary (safe fallback)
   getSessionSummary() {
-    return {
-      totalEvents: this.history.length,
-    }
-  }
+    return this.sessionSummary || "";
+  },
 
-  logEvent(type, data) {
-    this.addToHistory({ type, data, t: Date.now() })
-  }
-}
+  // update summary
+  setSessionSummary(summary) {
+    this.sessionSummary = summary;
+  },
 
-export const worldState = new WorldState()
+  // clear session
+  clearSession() {
+    this.sessionTimeline = [];
+    this.sessionSummary = "";
+  },
+};
+
+export default worldState;
