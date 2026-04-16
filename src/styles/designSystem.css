@@ -1,112 +1,74 @@
-/* === ECHOWORLD VISUAL SYSTEM === */
+/* === ECHOWORLD UNIFIED VISUAL SYSTEM === */
 
-/* Base */
 body {
   margin: 0;
   background: radial-gradient(circle at center, #1f1f35, #0e0e1a);
   color: #f8f6f2;
   font-family: 'Playfair Display', serif;
-  font-size: 18px; /* bigger readable text */
+  font-size: 22px; /* Enlarge base text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Headings */
-h1, h2, h3 {
-  font-weight: 500;
-  letter-spacing: 0.5px;
+/* Main Session Title - centered and larger */
+h1 {
+  font-size: 42px;
+  text-align: center;
+  margin: 40px 0;
+  width: 100%;
 }
 
-/* Paragraphs */
-p {
-  margin: 8px 0;
-  font-size: 16px;
-  line-height: 1.4;
+/* Unified Dashboard Container - prevents overlapping */
+.main-stage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Space between panels so they don't touch */
+  max-width: 1200px;
+  padding: 20px;
 }
 
-/* Remove ugly black blocks */
-div {
-  background-color: transparent;
-}
-
-/* Panels (LEFT + RIGHT dashboards) */
+/* Redesigned Panels - now they flow naturally */
 .learner-dashboard,
 .teaching-mind,
 .feedback-panel {
-  background: rgba(20, 20, 30, 0.75);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  background: rgba(20, 20, 30, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  flex: 1 1 350px; /* Panels will grow/shrink but stay neat */
+  min-width: 300px;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Layout breathing room */
-.learner-dashboard {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 260px;
-}
-
-.teaching-mind {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 260px;
-}
-
-.feedback-panel {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  width: 260px;
-}
-
-/* Main session title */
-h1 {
-  font-size: 32px;
-  text-align: center;
-  margin-top: 80px;
-}
-
-/* Remove that vertical black bar feeling */
-.main-stage,
-.session-area {
-  background: transparent !important;
-}
-
-/* Buttons (BIG + CLEAN) */
+/* Enlarged Buttons - BIG + CLEAN */
 button {
   background: linear-gradient(135deg, #3a7d44, #4fa85a);
   border: none;
   color: white;
-  padding: 14px 20px;
-  border-radius: 10px;
-  font-size: 16px;
+  padding: 18px 30px; /* Significantly larger buttons */
+  border-radius: 12px;
+  font-size: 20px; /* Much larger button text */
+  font-weight: bold;
   cursor: pointer;
-  margin-top: 10px;
+  margin: 15px 0;
+  width: 100%; /* Buttons now fill their panels */
   transition: all 0.2s ease;
 }
 
 button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #4fa85a, #63c174);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(58, 125, 68, 0.4);
 }
 
-/* Scenario button (top left) */
-button.scenario {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-/* Clean divider */
-hr {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  margin: 12px 0;
-}
-
-/* Text labels (make clearer) */
+/* Text labels - high contrast gold */
 strong {
-  font-weight: 500;
+  font-weight: 600;
   color: #e6c97a;
+  display: block;
+  margin-bottom: 5px;
 }
