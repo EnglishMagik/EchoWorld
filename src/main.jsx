@@ -1,10 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import Scene from "./components/Scene"
-import "../src/styles/designSystem.css"
+import App from "./App.jsx"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Scene />
+    <App />
   </React.StrictMode>
 )
