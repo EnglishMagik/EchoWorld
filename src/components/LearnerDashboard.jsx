@@ -1,4 +1,4 @@
-import { worldState } from "../engine/worldState"
+import worldState from "../engine/worldState"
 
 export default function LearnerDashboard() {
   const profile = worldState.user || { level: 1, xp: 0 }
