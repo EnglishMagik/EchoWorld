@@ -1,9 +1,9 @@
-import { worldState } from "./worldState"
+
 import { sendToAI } from "./aiService"
 import { adaptLesson } from "./lessonAdapter"
-
+import worldState from "../engine/worldState" 
 /**
- * 📚 Generate + adapt Teaching Studio lesson
+ * 📚 Generate + adapt Teaching Studio lesson 
  */
 export async function generateLessonFromSession() {
   const history = worldState.getHistory()
