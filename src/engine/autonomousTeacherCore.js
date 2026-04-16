@@ -1,4 +1,4 @@
-import { worldState } from "./worldState"
+import worldState from "../engine/worldState"
 
 /**
  * 🧠 AUTONOMOUS TEACHER CORE

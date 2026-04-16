@@ -1,5 +1,4 @@
-import { worldState } from "./worldState"
-
+import worldState from "../engine/worldState"
 /**
  * 🧠 TEACHING AUTONOMY ENGINE
  * Determines what EchoWorld should teach next proactively

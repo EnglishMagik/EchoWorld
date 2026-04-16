@@ -1,4 +1,4 @@
-import { worldState } from "./worldState"
+import worldState from "../engine/worldState"
 import { getLearnerIdentity } from "./learnerIdentity"
 import { getLongTermMemory } from "./longTermMemory"
 

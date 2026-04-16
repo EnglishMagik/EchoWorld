@@ -1,5 +1,5 @@
 import { sendToAI } from "../services/aiService"
-import { worldState } from "./worldState"
+import worldState from "../engine/worldState"
 
 /**
  * 🌱 EchoWorld Scenario Writer

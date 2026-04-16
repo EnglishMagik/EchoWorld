@@ -1,4 +1,4 @@
-import { worldState } from "./worldState"
+import worldState from "../engine/worldState"
 
 export function buildAIContext(userText) {
   const scene = worldState.scenarios[worldState.currentScene]

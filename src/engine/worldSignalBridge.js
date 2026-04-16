@@ -1,5 +1,5 @@
 import { uiEventBus } from "./uiEventBus"
-import { worldState } from "./worldState"
+import worldState from "../engine/worldState"
 
 export function broadcastWorldSignals() {
   uiEventBus.emit("mood", worldState.mood)

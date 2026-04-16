@@ -1,4 +1,4 @@
-import { worldState } from "./worldState"
+import worldState from "../engine/worldState"
 
 // Core safe engines (only those assumed stable)
 import { runRealtimeFeedbackLoop } from "./realtimeFeedbackLoop"
