@@ -14,26 +14,29 @@ const worldState = {
     });
   },
 
-  // get full timeline (used by UI)
-  getSessionTimeline() {
-    return this.sessionTimeline;
-  },
+getSessionTimeline() {
+  return Array.isArray(this.sessionTimeline)
+    ? this.sessionTimeline
+    : [];
+},
 
-  // get summary (safe fallback)
-  getSessionSummary() {
-    return this.sessionSummary || "";
-  },
+// compatibility alias (fixes old code errors)
+getHistory() {
+  return this.getSessionTimeline();
+},
 
-  // update summary
-  setSessionSummary(summary) {
-    this.sessionSummary = summary;
-  },
+getSessionSummary() {
+  return this.sessionSummary || "";
+},
 
-  // clear session
-  clearSession() {
-    this.sessionTimeline = [];
-    this.sessionSummary = "";
-  },
+setSessionSummary(summary) {
+  this.sessionSummary = summary;
+},
+
+clearSession() {
+  this.sessionTimeline = [];
+  this.sessionSummary = "";
+},
 };
 
 export default worldState;
