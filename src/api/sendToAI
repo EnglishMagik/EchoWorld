@@ -1,0 +1,4 @@
+export async function sendToAI(message) {
+  // For now, just return a fake response so the app builds
+  return "AI is connected (mock response): " + message;
+}
