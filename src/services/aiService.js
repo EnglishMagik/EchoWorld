@@ -1,4 +1,4 @@
-import { getTeacherPersona } from "./teacherPersona"
+import { getTeacherPersona } from "../engine/teacherPersona"
 
 export async function sendToAI({
   input,
