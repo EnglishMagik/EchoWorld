@@ -1,4 +1,4 @@
-import { worldState } from "../engine/worldState"
+import worldState from "../engine/worldState"
 import { useSessionStore } from "../store/sessionStore"
 
 export default function LessonSummary() {

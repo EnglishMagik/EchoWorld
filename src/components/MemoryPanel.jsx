@@ -1,5 +1,5 @@
 import { useSessionStore } from "../store/sessionStore"
-import { worldState } from "../engine/worldState"
+import worldState from "../engine/worldState"
 
 export default function MemoryPanel() {
   const messages = useSessionStore((s) => s.messages)

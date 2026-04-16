@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { generateScenario } from "../engine/scenarioWriter"
-import { worldState } from "../engine/worldState"
+import worldState from "../engine/worldState"
 
 export default function ScenarioBuilder() {
   const [topic, setTopic] = useState("")

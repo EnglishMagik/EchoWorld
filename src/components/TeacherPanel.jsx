@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
-import { worldState } from "../engine/worldState"
+import worldState from "../engine/worldState"
+
 
 export default function TeacherPanel() {
   const [mode, setMode] = useState(worldState.teacherMode)

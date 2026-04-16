@@ -1,4 +1,4 @@
-import { worldState } from "../engine/worldState"
+import worldState from "../engine/worldState"
 import { useState } from "react"
 
 export default function ScenarioLibrary() {

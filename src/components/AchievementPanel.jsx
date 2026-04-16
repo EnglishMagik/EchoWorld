@@ -1,4 +1,4 @@
-import { worldState } from "../engine/worldState"
+import worldState from "../engine/worldState"
 
 export default function AchievementPanel() {
   return (
