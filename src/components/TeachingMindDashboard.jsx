@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { worldState } from "../engine/worldState"
+import worldState from "../engine/worldState"
 
 export default function TeachingMindDashboard() {
   const [state, setState] = useState({})
