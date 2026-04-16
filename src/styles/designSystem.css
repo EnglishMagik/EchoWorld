@@ -22,12 +22,14 @@ p {
   line-height: 1.4;
 }
 
-/* Remove ugly black blocks */
-div {
-  background-color: transparent;
+/* fix black strip safely */
+.main-area,
+.app-layout {
+  background: transparent;
 }
 
 /* Panels (LEFT + RIGHT dashboards) */
+/* REMOVED: position absolute to prevent overlapping */
 .learner-dashboard,
 .teaching-mind,
 .feedback-panel {
@@ -38,33 +40,11 @@ div {
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* Layout breathing room */
-.learner-dashboard {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 260px;
-}
-
-.teaching-mind {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 260px;
-}
-
-.feedback-panel {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  width: 260px;
-}
-
 /* Main session title */
 h1 {
   font-size: 32px;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 20px; /* Adjusted from 80px for better grid spacing */
 }
 
 /* Remove that vertical black bar feeling */
@@ -91,13 +71,6 @@ button:hover {
   background: linear-gradient(135deg, #4fa85a, #63c174);
 }
 
-/* Scenario button (top left) */
-button.scenario {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
 /* Clean divider */
 hr {
   border: none;
@@ -109,4 +82,59 @@ hr {
 strong {
   font-weight: 500;
   color: #e6c97a;
+}
+
+/* === FIXED LAYOUT SYSTEM === */
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr 300px;
+  grid-template-rows: 80px 1fr;
+  height: 100vh;
+  gap: 12px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* top bar */
+.top-bar {
+  grid-column: 1 / 4;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+}
+
+/* center */
+.main-area {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* left panel */
+.left-panel {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* right panel */
+.right-panel {
+  grid-column: 3;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* panels */
+.left-panel > div,
+.right-panel > div {
+  background: rgba(20,20,30,0.8);
+  padding: 16px;
+  border-radius: 12px;
 }

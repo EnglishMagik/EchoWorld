@@ -5,6 +5,7 @@
   overflow: hidden;
 }
 
+/* This layer sits on top of the scene, but handles flex spacing for buttons */
 .ui-layer {
   position: absolute;
   bottom: 20px;
@@ -14,4 +15,9 @@
   justify-content: space-between;
   align-items: flex-end;
   gap: 20px;
+  pointer-events: none; /* Allows clicking through to the scene if needed */
+}
+
+.ui-layer > * {
+  pointer-events: auto; /* Re-enables clicking for buttons inside */
 }
