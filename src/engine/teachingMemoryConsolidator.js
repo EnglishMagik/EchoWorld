@@ -1,4 +1,4 @@
-import { worldState } from "./worldState"
+import worldState from "./worldState"
 
 /**
  * 🧠 TEACHING MEMORY CONSOLIDATION ENGINE
